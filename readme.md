@@ -18,6 +18,11 @@ You need this program to run ```TwitterBot```
 And the step is :
 * install ```python``` and ```firefox```
 * copy ```gecko driver``` to python's directory. (Usually stored in ```C:\Users\[name_of_user]\AppData\Local\Programs\Python\[python_version])```
+* open ```cmd.exe``` by pressing ```WinKey + R``` and type ```cmd```
+* install selenium by typing this code on your cmd
+```pip install selenium```
+* install pynput by typing this code on your cmd
+```pip install pynput```
 * edit ```TwitterBot``` in your favourite IDE
 * scroll to bottom to configuring your login details and the topic.
 ```
