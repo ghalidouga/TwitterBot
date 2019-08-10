@@ -15,15 +15,23 @@ class TwitterBot:
 
     def login(self):
         bot = self.bot
-        bot.get('https://twitter.com/')
+        bot.get('https://twitter.com/login')
         time.sleep(3)
-        email = bot.find_element_by_class_name('email-input')
-        password = bot.find_element_by_name('session[password]')
-        email.clear()
-        password.clear()
+        email = ActionChains(bot)
+        password = ActionChains(bot)
         email.send_keys(self.username)
+        email.perform()
+        password.send_keys(Keys.TAB)
         password.send_keys(self.password)
         password.send_keys(Keys.RETURN)
+        password.perform()
+        # email = bot.find_element_by_class_name('email-input')
+        # password = bot.find_element_by_name('session[password]')
+        # email.clear()
+        # password.clear()
+        # email.send_keys(self.username)
+        # password.send_keys(self.password)
+        # password.send_keys(Keys.RETURN)
         time.sleep(3)
     
     def like_tweet(self,topic):
@@ -48,7 +56,7 @@ class TwitterBot:
 
             
 
-ed = TwitterBot('putYourEmailInHere@example.com','putYourPasswordInHere') #configuring your login details
+ed = TwitterBot('putYourEmail@here.com','putYourPasswordHere') #configuring your login details
 ed.login()
-ed.like_tweet('putYourTopicToLikeAndRetweetInHere') #rename the topic you want
+ed.like_tweet('putYourTopicHere') #rename the topic you want
 
