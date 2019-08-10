@@ -20,9 +20,13 @@ And the step is :
 * copy ```gecko driver``` to python's directory. (Usually stored in ```C:\Users\[name_of_user]\AppData\Local\Programs\Python\[python_version])```
 * open ```cmd.exe``` by pressing ```WinKey + R``` and type ```cmd```
 * install selenium by typing this code on your cmd
-```pip install selenium```
+```
+pip install selenium
+```
 * install pynput by typing this code on your cmd
-```pip install pynput```
+```
+pip install pynput
+```
 * edit ```TwitterBot``` in your favourite IDE
 * scroll to bottom to configuring your login details and the topic.
 ```
