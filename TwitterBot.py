@@ -57,7 +57,7 @@ class TwitterBot:
 email = input("Enter your email \n")
 password = input("Enter your password \n")
 topic = input("Enter your topic \n")
-delay = input("Enter your delay time between auto like and retweet. (In numbers only, example 10 for putting 10 seconds delay. 10 is recomennded delay \n")
+delay = int ( input("Enter your delay time. 10 is recommended\n") )
 ed = TwitterBot(email,password)
 ed.login()
 ed.like_tweet(topic)
