@@ -7,7 +7,7 @@ Use it on your own risk.
 # Features
 For now, it's only
 * Auto retweet
-* Auto like
+* ~~Auto like~~
 
 # Installation
 You need this program to run ```TwitterBot```
