@@ -2,10 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from pynput.keyboard import Key, Controller
 from selenium.webdriver.common.action_chains import ActionChains
-from config import email
-from config import password
-from config import topic
-from config import delay
 import sys
 import time
 
@@ -58,7 +54,10 @@ class TwitterBot:
             time.sleep(delay)
 
             
-
+email = input("Enter your email \n")
+password = input("Enter your password \n")
+topic = input("Enter your topic \n")
+delay = input("Enter your delay time between auto like and retweet. (In numbers only, example 10 for putting 10 seconds delay. 10 is recomennded delay \n")
 ed = TwitterBot(email,password)
 ed.login()
 ed.like_tweet(topic)
