@@ -27,16 +27,14 @@ pip install selenium
 ```
 pip install pynput
 ```
-* edit ```TwitterBot``` in your favourite IDE
-* scroll to bottom to configuring your login details and the topic.
-```
-ed = TwitterBot('putYourEmailInHere@example.com','putYourPasswordInHere') #configuring your login details
-ed.login()
-ed.like_tweet('putYourTopicToLikeAndRetweetInHere') #rename the topic you want
-```
+* edit ```config.py``` in your favourite IDE or open it with ```Notepad```
+* rename ```youEmailHere@example.com``` in file ```config.py```
+* rename the ```password```, ```topic```, and the ```delay``` too if you want
 * save
 * run the ```TwitterBot.py``` or execute
-```python TwitterBot.py```
+```
+python TwitterBot.py
+```
 
 # Copyright
 Bebas lah kalian curi, fork, clone atau download.
