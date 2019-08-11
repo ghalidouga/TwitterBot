@@ -2,7 +2,10 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from pynput.keyboard import Key, Controller
 from selenium.webdriver.common.action_chains import ActionChains
-from Xlib import XK, display, ext, X, protocol
+from config import email
+from config import password
+from config import topic
+from config import delay
 import sys
 import time
 
@@ -46,17 +49,17 @@ class TwitterBot:
             time.sleep(1)
             like.send_keys('l')
             like.perform()
-            time.sleep(1)
-            actions.send_keys('t')
-            actions.send_keys(Keys.RETURN)
-            actions.perform()
+            # time.sleep(1)
+            # actions.send_keys('t')
+            # actions.send_keys(Keys.RETURN)
+            # actions.perform()
             print (n, ' likes + retweets completed')
             n = n + 1
-            time.sleep(7)
+            time.sleep(delay)
 
             
 
-ed = TwitterBot('putYourEmail@here.com','putYourPasswordHere') #configuring your login details
+ed = TwitterBot(email,password)
 ed.login()
-ed.like_tweet('putYourTopicHere') #rename the topic you want
+ed.like_tweet(topic)
 
