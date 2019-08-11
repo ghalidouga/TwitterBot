@@ -18,23 +18,16 @@ You need this program to run ```TwitterBot```
 And the step is :
 * install ```python``` and ```firefox```
 * copy ```gecko driver``` to python's directory. (Usually stored in ```C:\Users\[name_of_user]\AppData\Local\Programs\Python\[python_version])```
-* open ```cmd.exe``` by pressing ```WinKey + R``` and type ```cmd```
-* install selenium by typing this code on your cmd
-```
-pip install selenium
-```
-* install pynput by typing this code on your cmd
-```
-pip install pynput
-```
-* edit ```config.py``` in your favourite IDE or open it with ```Notepad```
-* rename ```youEmailHere@example.com``` in file ```config.py```
-* rename the ```password```, ```topic```, and the ```delay``` too if you want
-* save
 * run the ```TwitterBot.py``` or execute
 ```
 python TwitterBot.py
 ```
+* if the ```console``` asking ```Enter your email``` type your email that you use to login twitter and hit enter
+* same as ```Enter your password```, ```Enter your topic```, and input ```delay```
+* wait
+* ???
+* profit
+
 
 # Copyright
 Bebas lah kalian curi, fork, clone atau download.
