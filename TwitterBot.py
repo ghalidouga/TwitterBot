@@ -24,13 +24,6 @@ class TwitterBot:
         password.send_keys(self.password)
         password.send_keys(Keys.RETURN)
         password.perform()
-        # email = bot.find_element_by_class_name('email-input')
-        # password = bot.find_element_by_name('session[password]')
-        # email.clear()
-        # password.clear()
-        # email.send_keys(self.username)
-        # password.send_keys(self.password)
-        # password.send_keys(Keys.RETURN)
         time.sleep(3)
     
     def like_tweet(self,topic):
@@ -52,18 +45,13 @@ class TwitterBot:
                 retweet.send_keys('t')
                 retweet.send_keys(Keys.RETURN)
                 retweet.perform()
-                # time.sleep(1)
-                # like.send_keys('l')
-                # like.perform()
-            
-
-
+                      
             if likeTweet == 'YES':
                 like.send_keys('l')
                 like.perform()
                     
             if retweetTweet == 'YES' and likeTweet == 'YES':
-                print (n, ' likes + retweets completed')
+                print (n, ' likes and retweets completed')
                 n = n + 1
 
             if retweetTweet == 'YES' and likeTweet == 'NO':
@@ -75,20 +63,7 @@ class TwitterBot:
                 n = n + 1
                 
             time.sleep(delay)
-                    # elif likeTweet == True and retweetTweet == False:
-                #     like.send_keys('l')
-                #     like.perform()
-                #     time.sleep(1)
-                #     print (n, ' likes completed')
-                #     n = n + 1
-                #     time.sleep(delay)
-                #     elif likeTweet == False and retweetTweet == True:
-                #         retweet.send_keys('t')
-                #         retweet.send_keys(Keys.RETURN)
-                #         retweet.perform()
-                #         print (n, ' retweets completed')
-                #         n = n + 1
-                #         time.sleep(delay)
+                
             
 
             
