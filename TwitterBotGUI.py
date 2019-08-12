@@ -1,0 +1,40 @@
+from tkinter import *
+
+root = Tk()
+labelFrame = Frame(root)
+inputFrame = Frame(root)
+checkBoxFrame = Frame(root)
+checkBoxLabelFrame = Frame(root)
+labelFrame.pack(side=LEFT, padx=20)
+inputFrame.pack(side=LEFT, padx=20)
+checkBoxFrame.pack(side=TOP)
+checkBoxLabelFrame.pack(side=LEFT)
+
+emailLabel = Label(labelFrame, text="Email")
+passwordLabel = Label(labelFrame, text="Password")
+topicLabel = Label(labelFrame, text="Topic")
+delayLabel = Label(labelFrame, text="Delay")
+
+emailInput = Entry(inputFrame)
+passwordInput = Entry(inputFrame, show="*",)
+topicInput = Entry(inputFrame)
+delayInput = Entry(inputFrame)
+
+retweetLabel = Checkbutton(checkBoxFrame, text="Auto Retweet")
+likeLabel = Checkbutton(checkBoxFrame, text="Auto Like")
+startButton = Button(checkBoxFrame, text="Start")
+
+emailLabel.pack()
+passwordLabel.pack()
+topicLabel.pack()
+delayLabel.pack()
+emailInput.pack()
+passwordInput.pack()
+topicInput.pack()
+delayInput.pack()
+retweetLabel.pack()
+likeLabel.pack()
+startButton.pack()
+
+root.resizable(False, False)
+root.mainloop()
