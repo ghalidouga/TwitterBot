@@ -39,24 +39,64 @@ class TwitterBot:
         time.sleep(3)
         n = 1
         while True:
-            actions = ActionChains(bot)
+            navigate = ActionChains(bot)
             like = ActionChains(bot)
-            like.send_keys('j')
+            retweet = ActionChains(bot)
+            navigate.send_keys('j')
+            navigate.perform()
             time.sleep(1)
-            like.send_keys('l')
-            like.perform()
-            # time.sleep(1)
-            # actions.send_keys('t')
-            # actions.send_keys(Keys.RETURN)
-            # actions.perform()
-            print (n, ' likes + retweets completed')
-            n = n + 1
+
+            # Decide to like or retweet or both
+
+            if retweetTweet == 'YES':
+                retweet.send_keys('t')
+                retweet.send_keys(Keys.RETURN)
+                retweet.perform()
+                # time.sleep(1)
+                # like.send_keys('l')
+                # like.perform()
+            
+
+
+            if likeTweet == 'YES':
+                like.send_keys('l')
+                like.perform()
+                    
+            if retweetTweet == 'YES' and likeTweet == 'YES':
+                print (n, ' likes + retweets completed')
+                n = n + 1
+
+            if retweetTweet == 'YES' and likeTweet == 'NO':
+                print (n, ' retweets completed')
+                n = n + 1
+
+            if retweetTweet == 'NO' and likeTweet == 'YES':
+                print (n, ' likes completed')
+                n = n + 1
+                
             time.sleep(delay)
+                    # elif likeTweet == True and retweetTweet == False:
+                #     like.send_keys('l')
+                #     like.perform()
+                #     time.sleep(1)
+                #     print (n, ' likes completed')
+                #     n = n + 1
+                #     time.sleep(delay)
+                #     elif likeTweet == False and retweetTweet == True:
+                #         retweet.send_keys('t')
+                #         retweet.send_keys(Keys.RETURN)
+                #         retweet.perform()
+                #         print (n, ' retweets completed')
+                #         n = n + 1
+                #         time.sleep(delay)
+            
 
             
 email = input("Enter your email \n")
 password = input("Enter your password \n")
 topic = input("Enter your topic \n")
+retweetTweet = ( input("Do you want to auto-retweet ? \n Type YES or NO \n"))
+likeTweet = ( input("Do you want to auto-like ? \n Type YES or NO \n"))
 delay = int ( input("Enter your delay time. 10 is recommended\n") )
 ed = TwitterBot(email,password)
 ed.login()
