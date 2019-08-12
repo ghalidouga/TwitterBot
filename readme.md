@@ -3,9 +3,9 @@ A simple bot for Twitter
 
 # Disclaimer
 Use it on your own risk.
+Respect Twitter's TOS.
 
 # Features
-For now, it's only
 * Auto retweet
 * Auto like
 
