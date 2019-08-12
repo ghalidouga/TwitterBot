@@ -11,6 +11,7 @@ For now, it's only
 
 # Installation
 You need this program to run ```TwitterBot```
+* Latest releaese of [TwitterBot](https://github.com/ghalidouga/TwitterBot/releases)
 * [python](https://www.python.org/downloads/)
 * [gecko driver](https://github.com/mozilla/geckodriver/releases/tag/v0.24.0)
 * [firefox](https://www.mozilla.org/en-US/firefox/)
