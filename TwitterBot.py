@@ -66,7 +66,7 @@ class TwitterBot:
                 
             
 
-            
+print("TwitterBot v.1.2-alpha by ghalidouga")
 email = input("Enter your email \n")
 password = input("Enter your password \n")
 topic = input("Enter your topic \n")
