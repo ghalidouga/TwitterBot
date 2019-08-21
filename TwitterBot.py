@@ -4,6 +4,7 @@ from pynput.keyboard import Key, Controller
 from selenium.webdriver.common.action_chains import ActionChains
 import sys
 import time
+import getpass
 
 
 
@@ -70,14 +71,25 @@ class TwitterBot:
             time.sleep(delay)
             x = x + 1
             
-            
         
-        print("Finished!")
+        
+    
+            again = input("Finished! But do you want to do it again ? \n Type YES or NO \n")
+            # topic = input("Enter your topic \n")
+            # retweetTweet = ( input("Do you want to auto-retweet ? \n Type YES or NO \n"))
+            # likeTweet = ( input("Do you want to auto-like ? \n Type YES or NO \n"))
+            # repeatAction = int(input("Enter how many times do you want to execute this bot. 100 is recommended \n"))
+            # delay = int ( input("Enter your delay time. 10 is recommended\n") )
+            
+            if again == 'YES':
+                ed.like_tweet(topic)
+            else:
+                sys.exit()     
             
 
 
 
-print("TwitterBot v.1.2-alpha by ghalidouga")
+print("TwitterBot v.1.3-alpha by ghalidouga")
 email = input("Enter your email/username \n")
 password = input("Enter your password \n")
 topic = input("Enter your topic \n")
@@ -92,4 +104,6 @@ delay = int ( input("Enter your delay time. 10 is recommended\n") )
 ed = TwitterBot(email,password)
 ed.login()
 ed.like_tweet(topic)
+
+
 
