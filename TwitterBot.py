@@ -34,7 +34,7 @@ class TwitterBot:
         bot = self.bot
         bot.get('https://twitter.com/search?q='+topic+'&src=typed_query&f=live')
         time.sleep(3)
-        n = 1
+        n = 0
         x = 0
         while x <= repeatAction:
             navigate = ActionChains(bot)
@@ -56,20 +56,21 @@ class TwitterBot:
                 like.perform()
                     
             if retweetTweet == 'YES' and likeTweet == 'YES':
-                print (n, ' likes and retweets completed')
                 n = n + 1
+                print (n, ' likes and retweets completed')
 
             if retweetTweet == 'YES' and likeTweet == 'NO':
-                print (n, ' retweets completed')
                 n = n + 1
+                print (n, ' retweets completed')
 
             if retweetTweet == 'NO' and likeTweet == 'YES':
-                print (n, ' likes completed')
                 n = n + 1
+                print (n, ' likes completed')
                 
             time.sleep(delay)
             x = x + 1
-            print(x)
+            
+            
         
         print("Finished!")
             
