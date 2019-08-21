@@ -6,11 +6,15 @@ import sys
 import time
 
 
+
+
 class TwitterBot:
     def __init__(self,username,password):
         self.username = username
         self.password = password
         self.bot = webdriver.Firefox()
+
+    
 
     def login(self):
         bot = self.bot
@@ -31,7 +35,8 @@ class TwitterBot:
         bot.get('https://twitter.com/search?q='+topic+'&src=typed_query&f=live')
         time.sleep(3)
         n = 1
-        while True:
+        x = 0
+        while x <= repeatAction:
             navigate = ActionChains(bot)
             like = ActionChains(bot)
             retweet = ActionChains(bot)
@@ -63,16 +68,26 @@ class TwitterBot:
                 n = n + 1
                 
             time.sleep(delay)
-                
+            x = x + 1
+            print(x)
+        
+        print("Finished!")
             
 
+
+
 print("TwitterBot v.1.2-alpha by ghalidouga")
-email = input("Enter your email \n")
+email = input("Enter your email/username \n")
 password = input("Enter your password \n")
 topic = input("Enter your topic \n")
 retweetTweet = ( input("Do you want to auto-retweet ? \n Type YES or NO \n"))
 likeTweet = ( input("Do you want to auto-like ? \n Type YES or NO \n"))
+repeatAction = int(input("Enter how many times do you want to execute this bot. 100 is recommended \n"))
 delay = int ( input("Enter your delay time. 10 is recommended\n") )
+
+
+    
+
 ed = TwitterBot(email,password)
 ed.login()
 ed.like_tweet(topic)
