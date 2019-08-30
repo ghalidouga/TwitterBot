@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from pynput.keyboard import Key, Controller
 from selenium.webdriver.common.action_chains import ActionChains
+from random import randint
 import sys
 import time
 import getpass
@@ -38,6 +39,8 @@ class TwitterBot:
         n = 0
         x = 0
         while x < repeatAction:
+            delayRandom = randint(delayRandomMin,delayRandomMax)
+            print(delayRandom)
             navigate = ActionChains(bot)
             like = ActionChains(bot)
             retweet = ActionChains(bot)
@@ -68,7 +71,7 @@ class TwitterBot:
                 n = n + 1
                 print (n, ' likes completed')
                 
-            time.sleep(delay)
+            time.sleep(delayRandom)
             x = x + 1
             
         
@@ -96,7 +99,9 @@ topic = input("Enter your topic \n")
 retweetTweet = ( input("Do you want to auto-retweet ? \n Type YES or NO \n"))
 likeTweet = ( input("Do you want to auto-like ? \n Type YES or NO \n"))
 repeatAction = int(input("Enter how many times do you want to execute this bot. 100 is recommended \n"))
-delay = int ( input("Enter your delay time. 10 is recommended\n") )
+delayRandomMin = int(input("Enter your minimum random delay time. 8 is recommended"))
+delayRandomMax = int(input("Enter your maximum random delay time. Must be higher than previous number"))
+# delay = int ( input("Enter your delay time. 10 is recommended\n") )
 
 
     
