@@ -37,7 +37,7 @@ class TwitterBot:
         time.sleep(3)
         n = 0
         x = 0
-        while x <= repeatAction:
+        while x < repeatAction:
             navigate = ActionChains(bot)
             like = ActionChains(bot)
             retweet = ActionChains(bot)
@@ -83,7 +83,7 @@ class TwitterBot:
             
         if again == 'YES':
             ed.like_tweet(topic)
-        else:
+        if again == 'NO':
             sys.exit()     
             
 
