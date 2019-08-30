@@ -40,7 +40,6 @@ class TwitterBot:
         x = 0
         while x < repeatAction:
             delayRandom = randint(delayRandomMin,delayRandomMax)
-            print(delayRandom)
             navigate = ActionChains(bot)
             like = ActionChains(bot)
             retweet = ActionChains(bot)
@@ -99,9 +98,8 @@ topic = input("Enter your topic \n")
 retweetTweet = ( input("Do you want to auto-retweet ? \n Type YES or NO \n"))
 likeTweet = ( input("Do you want to auto-like ? \n Type YES or NO \n"))
 repeatAction = int(input("Enter how many times do you want to execute this bot. 100 is recommended \n"))
-delayRandomMin = int(input("Enter your minimum random delay time. 8 is recommended"))
-delayRandomMax = int(input("Enter your maximum random delay time. Must be higher than previous number"))
-# delay = int ( input("Enter your delay time. 10 is recommended\n") )
+delayRandomMin = int(input("Enter your minimum random delay time. 8 is recommended \n"))
+delayRandomMax = int(input("Enter your maximum random delay time. Must be higher than previous number \n"))
 
 
     
