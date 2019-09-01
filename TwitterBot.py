@@ -100,6 +100,9 @@ likeTweet = ( input("Do you want to auto-like ? \n Type YES or NO \n"))
 repeatAction = int(input("Enter how many times do you want to execute this bot. 100 is recommended \n"))
 delayRandomMin = int(input("Enter your minimum random delay time. 8 is recommended \n"))
 delayRandomMax = int(input("Enter your maximum random delay time. Must be higher than previous number \n"))
+while delayRandomMin >= delayRandomMax:
+    print("Your maximum delay time cannot be lower than minimum delay time")
+    delayRandomMax = int(input("Enter your maximum random delay time. Must be higher than previous number \n"))
 
 
     
