@@ -9,7 +9,7 @@ def start():
     emailWritten = emailInput.get()
     passwordWritten = passwordInput.get()
     topicWritten = topicInput.get()
-    delayWritten = delayInput.get()
+    delayWritten = int(delayInput.get())
     retweetWritten = retweetCheck.get()
     likeWritten = likeCheck.get()
     print(emailWritten)
@@ -30,6 +30,38 @@ def start():
     passwordType.send_keys(Keys.RETURN)
     passwordType.perform()
     time.sleep(3)
+    bot.get('https://twitter.com/search?q='+topicWritten+'&src=typed_query&f=live')
+    time.sleep(3)
+    n = 0
+    while True:
+        navigate = ActionChains(bot)
+        like = ActionChains(bot)
+        retweet = ActionChains(bot)
+        navigate.send_keys('j')
+        navigate.perform()
+        time.sleep(1)
+        if retweetWritten == 1:
+            retweet.send_keys('t')
+            retweet.send_keys(Keys.RETURN)
+            retweet.perform()
+                      
+        if likeWritten == 1:
+            like.send_keys('l')
+            like.perform()
+                    
+        if retweetWritten == 1 and likeWritten == 1:
+            n = n + 1
+            print (n, ' likes and retweets completed')
+
+        if retweetWritten == 1 and likeWritten == 0:
+            n = n + 1
+            print (n, ' retweets completed')
+
+        if retweetWritten == 0 and likeWritten == 1:
+            n = n + 1
+            print (n, ' likes completed')
+
+        time.sleep(delayWritten)
 
 
 root = Tk()
@@ -43,8 +75,9 @@ checkBoxFrame.pack(side=TOP)
 checkBoxLabelFrame.pack(side=LEFT)
 retweetCheck = IntVar()
 likeCheck = IntVar()
+delayVariable = IntVar()
 
-emailLabel = Label(labelFrame, text="Email")
+emailLabel = Label(labelFrame, text="Email/Username")
 passwordLabel = Label(labelFrame, text="Password")
 topicLabel = Label(labelFrame, text="Topic")
 delayLabel = Label(labelFrame, text="Delay")
