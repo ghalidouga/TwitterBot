@@ -1,4 +1,22 @@
 from tkinter import *
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+
+def test_email():
+    emailWritten = emailInput.get()
+    passwordWritten = passwordInput.get()
+    topicWritten = topicInput.get()
+    delayWritten = delayInput.get()
+    retweetWritten = retweetCheck.get()
+    likeWritten = likeCheck.get()
+    print(emailWritten)
+    print(passwordWritten)
+    print(topicWritten)
+    print(delayWritten)
+    print(retweetWritten)
+    print(likeWritten)
+    bot = 
 
 root = Tk()
 labelFrame = Frame(root)
@@ -9,6 +27,8 @@ labelFrame.pack(side=LEFT, padx=20)
 inputFrame.pack(side=LEFT, padx=20)
 checkBoxFrame.pack(side=TOP)
 checkBoxLabelFrame.pack(side=LEFT)
+retweetCheck = IntVar()
+likeCheck = IntVar()
 
 emailLabel = Label(labelFrame, text="Email")
 passwordLabel = Label(labelFrame, text="Password")
@@ -20,9 +40,10 @@ passwordInput = Entry(inputFrame, show="*",)
 topicInput = Entry(inputFrame)
 delayInput = Entry(inputFrame)
 
-retweetLabel = Checkbutton(checkBoxFrame, text="Auto Retweet")
-likeLabel = Checkbutton(checkBoxFrame, text="Auto Like")
-startButton = Button(checkBoxFrame, text="Start")
+
+retweetLabel = Checkbutton(checkBoxFrame, text="Auto Retweet", variable=retweetCheck)
+likeLabel = Checkbutton(checkBoxFrame, text="Auto Like", variable=likeCheck)
+startButton = Button(checkBoxFrame, text="Start", command=test_email)
 
 emailLabel.pack()
 passwordLabel.pack()
