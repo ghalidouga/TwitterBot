@@ -34,11 +34,20 @@ class TwitterBot:
     
     def like_tweet(self,topic):
         bot = self.bot
-        bot.get('https://twitter.com/search?q='+topic+'&src=typed_query&f=live')
+        urlBot = 'https://twitter.com/search?q='+topic+'&src=typed_query&f=live'
+        bot.get(urlBot)
+        
         time.sleep(3)
         n = 0
         x = 0
         while x < repeatAction:
+            if bot.current_url != urlBot:
+                resume = input("Paused. Do you want to Continue? \n Type YES to continue \n")
+                while resume == 'YES':
+                    bot.back()
+                    time.sleep(3)
+                    if bot.current_url == urlBot:
+                        resume = 'NO'
             delayRandom = randint(delayRandomMin,delayRandomMax)
             navigate = ActionChains(bot)
             like = ActionChains(bot)
