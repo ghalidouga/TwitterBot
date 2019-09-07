@@ -76,13 +76,7 @@ class TwitterBot:
         
         
     
-        again = input("Finished! But do you want to do it again ? \n Type YES or NO \n")
-        # topic = input("Enter your topic \n")
-        # retweetTweet = ( input("Do you want to auto-retweet ? \n Type YES or NO \n"))
-        # likeTweet = ( input("Do you want to auto-like ? \n Type YES or NO \n"))
-        # repeatAction = int(input("Enter how many times do you want to execute this bot. 100 is recommended \n"))
-        # delay = int ( input("Enter your delay time. 10 is recommended\n") )
-            
+        again = input("Finished! But do you want to do it again ? \n Type YES or NO \n")     
         if again == 'YES':
             ed.like_tweet(topic)
         if again == 'NO':
@@ -95,11 +89,14 @@ print("TwitterBot v.1.3-alpha by ghalidouga")
 email = input("Enter your email/username \n")
 password = input("Enter your password \n")
 topic = input("Enter your topic \n")
+hashtagmode = input("Do you want to add a Hashtag(#) in your topic ? \n Type YES or NO \n")
 retweetTweet = ( input("Do you want to auto-retweet ? \n Type YES or NO \n"))
 likeTweet = ( input("Do you want to auto-like ? \n Type YES or NO \n"))
 repeatAction = int(input("Enter how many times do you want to execute this bot. 100 is recommended \n"))
 delayRandomMin = int(input("Enter your minimum random delay time. 8 is recommended \n"))
 delayRandomMax = int(input("Enter your maximum random delay time. Must be higher than previous number \n"))
+if hashtagmode == 'YES':
+    topic = '%23'+topic
 while delayRandomMin >= delayRandomMax:
     print("Your maximum delay time cannot be lower than minimum delay time")
     delayRandomMax = int(input("Enter your maximum random delay time. Must be higher than previous number \n"))
