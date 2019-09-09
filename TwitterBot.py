@@ -75,15 +75,24 @@ class TwitterBot:
                     
             if retweetTweet == 'YES' and likeTweet == 'YES':
                 n = n + 1
-                print (n, ' likes and retweets completed')
+                if n == 1:
+                    print (n, 'like and retweet completed')
+                if n > 1:
+                    print (n, 'likes and retweets completed')
 
             if retweetTweet == 'YES' and likeTweet == 'NO':
                 n = n + 1
-                print (n, ' retweets completed')
+                if n == 1:
+                    print (n, 'retweet completed')
+                if n > 1:
+                    print (n, 'retweets completed')
 
             if retweetTweet == 'NO' and likeTweet == 'YES':
                 n = n + 1
-                print (n, ' likes completed')
+                if n == 1:
+                    print (n, 'like completed')
+                if n > 1:
+                    print (n, 'likes completed')
                 
             time.sleep(delayRandom)
             x = x + 1
@@ -95,7 +104,7 @@ class TwitterBot:
         if again == 'YES':
             ed.like_tweet(topic)
         if again == 'NO':
-            sys.exit()     
+            sys.exit(0)     
             
 
 
