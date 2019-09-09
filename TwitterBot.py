@@ -44,10 +44,16 @@ class TwitterBot:
             if bot.current_url != urlBot:
                 resume = input("Paused. Do you want to Continue? \n Type YES to continue \n")
                 while resume == 'YES':
+                    print("Trying to continue... please dont click anything.")
                     bot.back()
                     time.sleep(3)
                     if bot.current_url == urlBot:
                         resume = 'NO'
+                        navigateResume = ActionChains(bot)
+                        navigateResume.send_keys('j')
+                        navigateResume.perform()
+                        print("Bot Continue to working.")
+
             delayRandom = randint(delayRandomMin,delayRandomMax)
             navigate = ActionChains(bot)
             like = ActionChains(bot)
@@ -94,7 +100,7 @@ class TwitterBot:
 
 
 
-print("TwitterBot v.1.3-alpha by ghalidouga")
+print("TwitterBot v.1.4-alpha by ghalidouga")
 email = input("Enter your email/username \n")
 password = input("Enter your password \n")
 topic = input("Enter your topic \n")
