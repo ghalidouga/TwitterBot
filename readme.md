@@ -8,20 +8,20 @@ Respect Twitter's TOS.
 # Features
 * Auto retweet
 * Auto like
+* Pause-Resume Function
 
 # Installation
 You need this program to run ```TwitterBot```
 * Latest releaese of [TwitterBot](https://github.com/ghalidouga/TwitterBot/releases)
-* [python](https://www.python.org/downloads/)
 * [gecko driver](https://github.com/mozilla/geckodriver/releases/tag/v0.24.0)
 * [firefox](https://www.mozilla.org/en-US/firefox/)
 
 And the step is :
-* install ```python``` and ```firefox```
-* copy ```gecko driver``` to python's directory. (Usually stored in ```C:\Users\[name_of_user]\AppData\Local\Programs\Python\[python_version])```
+* install  ```firefox```
+* copy ```gecko driver``` to folder which contains ```TwitterBot.exe```
 * run the ```TwitterBot.exe```
 * if the ```console``` asking ```Enter your email``` type your email that you use to login twitter and hit enter
-* same as ```Enter your password```, ```Enter your topic```, ```auto-retweet```, ```auto-like``` and input ```delay```
+* same as ```Enter your password```, ```Enter your topic```, ```Hashtag or not```, ```auto-retweet```, ```auto-like``` and input ```delay```
 * wait
 * ???
 * profit
