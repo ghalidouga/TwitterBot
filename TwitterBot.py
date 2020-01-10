@@ -109,7 +109,7 @@ class TwitterBot:
 
 
 
-print("TwitterBot v.1.4-alpha by ghalidouga")
+print("TwitterBot v.2.0-alpha by ghalidouga")
 email = input("Enter your email/username \n")
 password = input("Enter your password \n")
 topic = input("Enter your topic \n")
