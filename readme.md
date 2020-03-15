@@ -8,6 +8,7 @@ Respect Twitter's TOS.
 # Features
 * Auto retweet
 * Auto like
+* Support S P A C E S
 * Pause-Resume Function
 
 # Installation

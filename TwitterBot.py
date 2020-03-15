@@ -32,10 +32,11 @@ class TwitterBot:
         password.perform()
         time.sleep(3)
     
-    def like_tweet(self,topic):
+    def like_tweet(self,topic2):
         bot = self.bot
-        urlBot = 'https://twitter.com/search?q='+topic+'&src=typed_query&f=live'
+        urlBot = 'https://twitter.com/search?q='+topic2+'&src=typed_query&f=live'
         bot.get(urlBot)
+        print(topic2)
         
         time.sleep(3)
         n = 0
@@ -102,17 +103,23 @@ class TwitterBot:
     
         again = input("Finished! But do you want to do it again ? \n Type YES or NO \n")     
         if again == 'YES':
-            ed.like_tweet(topic)
+            ed.like_tweet(topic2)
         if again == 'NO':
             sys.exit(0)     
             
 
 
 
-print("TwitterBot v.2.0-alpha by ghalidouga")
+print("TwitterBot v.2.1-alpha by ghalidouga")
 email = input("Enter your email/username \n")
 password = input("Enter your password \n")
-topic = input("Enter your topic \n")
+topic2 = input("Enter your topic \n")
+spasi = topic2.find(' ')
+print(spasi)
+topic2 = list(topic2)
+topic2[spasi] = '%20'
+topic2 = ''.join(map(str, topic2))
+print(topic2)
 hashtagmode = input("Do you want to add a Hashtag(#) in your topic ? \n Type YES or NO \n")
 retweetTweet = ( input("Do you want to auto-retweet ? \n Type YES or NO \n"))
 likeTweet = ( input("Do you want to auto-like ? \n Type YES or NO \n"))
@@ -120,7 +127,7 @@ repeatAction = int(input("Enter how many times do you want to execute this bot. 
 delayRandomMin = int(input("Enter your minimum random delay time. 8 is recommended \n"))
 delayRandomMax = int(input("Enter your maximum random delay time. Must be higher than previous number \n"))
 if hashtagmode == 'YES':
-    topic = '%23'+topic
+    topic2 = '%23'+topic2
 while delayRandomMin >= delayRandomMax:
     print("Your maximum delay time cannot be lower than minimum delay time")
     delayRandomMax = int(input("Enter your maximum random delay time. Must be higher than previous number \n"))
@@ -130,7 +137,7 @@ while delayRandomMin >= delayRandomMax:
 
 ed = TwitterBot(email,password)
 ed.login()
-ed.like_tweet(topic)
+ed.like_tweet(topic2)
 
 
 
