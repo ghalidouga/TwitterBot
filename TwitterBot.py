@@ -115,10 +115,11 @@ email = input("Enter your email/username \n")
 password = input("Enter your password \n")
 topic2 = input("Enter your topic \n")
 spasi = topic2.find(' ')
+if (spasi != -1):
+    topic2 = list(topic2)
+    topic2[spasi] = '%20'
+    topic2 = ''.join(map(str, topic2))
 print(spasi)
-topic2 = list(topic2)
-topic2[spasi] = '%20'
-topic2 = ''.join(map(str, topic2))
 print(topic2)
 hashtagmode = input("Do you want to add a Hashtag(#) in your topic ? \n Type YES or NO \n")
 retweetTweet = ( input("Do you want to auto-retweet ? \n Type YES or NO \n"))
