@@ -36,7 +36,7 @@ class TwitterBot:
         bot = self.bot
         urlBot = 'https://twitter.com/search?q='+topic2+'&src=typed_query&f=live'
         bot.get(urlBot)
-        print(topic2)
+        print(topic2) #debug
         
         time.sleep(3)
         n = 0
@@ -115,12 +115,15 @@ email = input("Enter your email/username \n")
 password = input("Enter your password \n")
 topic2 = input("Enter your topic \n")
 spasi = topic2.find(' ')
-if (spasi != -1):
-    topic2 = list(topic2)
-    topic2[spasi] = '%20'
+while (spasi != -1):
+    if (spasi != -1):
+        topic2 = list(topic2)
+        topic2[spasi] = '%20'
     topic2 = ''.join(map(str, topic2))
-print(spasi)
-print(topic2)
+    spasi = topic2.find(' ')
+print(topic2) #debug
+print(spasi) #debug
+print(topic2) #debug
 hashtagmode = input("Do you want to add a Hashtag(#) in your topic ? \n Type YES or NO \n")
 retweetTweet = ( input("Do you want to auto-retweet ? \n Type YES or NO \n"))
 likeTweet = ( input("Do you want to auto-like ? \n Type YES or NO \n"))
